@@ -1,0 +1,6 @@
+﻿  Game.cpp
+c:\users\alexander.jansson5\documents\visual studio 2017\projects\tetris\tetris\game.cpp(41): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Tetromino.cpp
+  Generating Code...
+c:\users\alexander.jansson5\documents\visual studio 2017\projects\tetris\tetris\tetromino.cpp(62): warning C4715: 'Tetromino::CollisionCheck': not all control paths return a value
+  Tetris.vcxproj -> C:\Users\alexander.jansson5\Documents\Visual Studio 2017\Projects\Tetris\Debug\Tetris.exe
