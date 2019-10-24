@@ -41,10 +41,9 @@ void Game::Run() {
 			std::srand(time(NULL));
 			int random = std::rand() % 7;
 			ConvertShapeToPosition(shapes[random], temp);
-			Tetromino tetromino{ this, std::vector<Vector2D>(temp,temp + sizeof temp / sizeof temp[0]) };
+			Tetromino* tetromino{ new Tetromino{ this, std::vector<Vector2D>(temp,temp + sizeof temp / sizeof temp[0]) } };
 			random = 0;
-			myCurrentTetromino = &tetromino;
-			myCurrentTetromino->Draw(); // myShape.size = 4
+			myCurrentTetromino = tetromino;
 		}
 		else { //wtf wtf wtf inget händer mellan.
 			myCurrentTetromino->Update();
@@ -56,7 +55,6 @@ void Game::Run() {
 			std::chrono::duration<float> elapsedTime = end - start;
 			myDeltaTime = (elapsedTime.count());
 		}
-		myCurrentTetromino->Draw(); // myShape.size = 0
 		
 	}
 }

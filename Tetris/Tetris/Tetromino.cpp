@@ -28,6 +28,7 @@ void Tetromino::Gravity() {
 			else
 			{
 				myGrounded = true;
+
 			}
 		}
 	}
@@ -41,7 +42,7 @@ bool Tetromino::CollisionCheck(const Vector2D& aDirection) {
 		Vector2D newPos = myPosition + aDirection + myShape[i];
 		for (int j = 0; j < 4; j++)
 		{
-			if (newPos == (myPosition + myShape[i])) {
+			if (newPos == (myPosition + myShape[j])) {
 				canCollide = false;
 				numberOfAcceptable++;
 			}
@@ -62,14 +63,12 @@ bool Tetromino::CollisionCheck(const Vector2D& aDirection) {
 }
 
 void Tetromino::Update() {
-	myShape.size();
 	Gravity();
 }
 
 void Tetromino::Draw() {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < myShape.size(); i++)
 	{
-		myShape.size();
 		myGame->SetCharacter(myPosition + myShape[i], gameData::BOX, gameData::Blue);
 	}
 }
